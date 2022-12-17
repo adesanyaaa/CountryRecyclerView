@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
@@ -23,7 +24,7 @@ class CountryActivity : AppCompatActivity() {
         binding = ActivityCountryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel = ViewModelProviders.of(this)
+        viewModel = ViewModelProvider(this)
             .get(ListViewModel::class.java)
         viewModel.refresh()
 
